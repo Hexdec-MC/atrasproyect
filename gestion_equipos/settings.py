@@ -13,7 +13,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", os.getenv("RENDER_EXTERNAL_HOSTNAME", "")]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "atrasproyect.onrender.com",   # dominio de tu proyecto en Render
+    os.getenv("RENDER_EXTERNAL_HOSTNAME", ""),  # Render lo asigna automáticamente
+]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,12 +32,6 @@ SECRET_KEY = 'django-insecure-*#(r4#0$acq)pt8slc)x^a9cv9a#66z%t#kz!0o@6hw80p0jld
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "atrasproyect.onrender.com",
-]
 
 
 # Application definition
